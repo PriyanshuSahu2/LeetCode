@@ -1,16 +1,11 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        map<int,int> mp;
+       int ans =0; // 4 ^ 1
 
         for(int i:nums){
-            mp[i]++;
+            ans ^= i;
         }
-        for(auto item:mp){
-            if(item.second==1){
-                return item.first;
-            }
-        }
-        return -1;
+        return ans;
     }
 };
