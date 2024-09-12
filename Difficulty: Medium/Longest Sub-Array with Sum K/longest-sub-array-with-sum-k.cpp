@@ -13,26 +13,35 @@ class Solution{
         int maxCount =0;
         int sum =0;
         for(int i=0;i<N;i++){
-            sum+=arr[i];
+            sum+=arr[i]; //34
             
-            if(sum == K){
-                maxCount = max(maxCount,i+1);
+            if(sum == K){//34 == 15
+                maxCount = max(maxCount,i+1);//2
             }
 
-            int rem = sum-K;
+            int rem = sum-K;//34-15 = 19
             
-            if(mp.find(rem) != mp.end()){
-                int len = i- mp[rem];
-                maxCount = max(maxCount,len);
+            if(mp.find(rem) != mp.end()){ //if Find Return True 
+                int len = i- mp[rem];// 4 - 0
+                maxCount = max(maxCount,len); //4,2 = 4
             }
-           if(mp.find(sum)== mp.end()){
-               mp[sum] = i;
+           if(mp.find(sum) == mp.end()){ //if Does Not find Return True
+               mp[sum] = i;//9 3
            }
         }
         return maxCount;
     } 
 
 };
+/*
+K  V
+10 0
+15 1
+17 2
+9  3
+
+
+*/
 
 //{ Driver Code Starts.
 
